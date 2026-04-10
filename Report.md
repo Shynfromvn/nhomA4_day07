@@ -133,11 +133,11 @@ Chạy 5 benchmark queries của nhóm trên implementation cá nhân của bạ
 
 | # | Query | Gold Answer |
 |---|-------|-------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | What is a vector store used for ? | A vector store stores embeddings and retrieves the most similar items for semantic search and RAG.|
+| 2 | Why does chunking matter for retrieval quality ? | Chunking matters because chunks that are too small lose context and chunks that are too large dilute relevance.|
+| 3 | How should a RAG system respond when retrieval is insufficient ? | It should say the context is insufficient or escalate instead of inventing an answer.|
+| 4 | Why is metadata filtering useful in support systems ?| Filtering reduces noise and prevents surfacing the wrong internal content to the wrong audience. |
+| 5 | How is Python used in AI and RAG applications ?| Python is used to clean data, train models, and connect embedding models, vector stores, and application logic.|
 
 ### Kết Quả Của Tôi
 
