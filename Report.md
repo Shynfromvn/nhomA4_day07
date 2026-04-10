@@ -114,14 +114,14 @@ Giải thích cách tiếp cận của bạn khi implement các phần chính tr
 
 | Pair | Sentence A | Sentence B | Dự đoán | Actual Score | Đúng? |
 |------|-----------|-----------|---------|--------------|-------|
-| 1 | | | high / low | | |
-| 2 | | | high / low | | |
-| 3 | | | high / low | | |
-| 4 | | | high / low | | |
-| 5 | | | high / low | | |
+| 1 | How do I return a product ? | What is the shop's return policy? | high | 0.5501 | Có |
+| 2 | Python is used for machine learning | Python helps build AI systems. | high | 0.6855 | Có |
+| 3 | Reset your password from the settings page | Neural networks have many layers | low | 0.0526 | Có |
+| 4 | Chunking affects retrieval quality | Small chunks can lose context in retrieval | high | 0.7702 | Có |
+| 5 | Billing issues should be escalated when documentation is missing | Brown bears live in northern forests | low | -0.0018 | Có |
 
 **Kết quả nào bất ngờ nhất? Điều này nói gì về cách embeddings biểu diễn nghĩa?**
-> *Viết 2-3 câu:*
+> Kết quả mình thấy bất ngờ nhất là cặp 4 có score cao hơn cả cặp 1, dù hai câu ở cặp 1 nhìn rất giống nhau với người đọc. Điều này cho thấy embedding không chỉ dựa vào từ khóa bề mặt mà còn phản ánh mức độ gần nhau về ngữ nghĩa và ngữ cảnh sử dụng. Đồng thời, score không cần phải gần 1.0 mới được xem là tương đồng mạnh, vì embedding biểu diễn nghĩa theo không gian liên tục chứ không theo luật khớp từ tuyệt đối.
 
 ---
 
@@ -143,13 +143,13 @@ Chạy 5 benchmark queries của nhóm trên implementation cá nhân của bạ
 
 | # | Query | Top-1 Retrieved Chunk (tóm tắt) | Score | Relevant? | Agent Answer (tóm tắt) |
 |---|-------|--------------------------------|-------|-----------|------------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | What is a vector store used for ? |`vector_store_notes.md` giải thích vector store là nơi lưu embeddings và truy xuất các mục gần nhất để phục vụ semantic search, recommendation và RAG. | 0.6625 | Có | Vector store được dùng để lưu vector embeddings và tìm các nội dung tương tự nhất phục vụ semantic retrieval và RAG.|
+| 2 | Why does chunking matter for retrieval quality ? | `chunking_experiment_report.md` nêu rằng chunk quá nhỏ sẽ mất ngữ cảnh, còn chunk quá lớn sẽ chứa quá nhiều ý và làm giảm độ liên quan. | 0.6442 | Có | Chunking ảnh hưởng trực tiếp đến retrieval vì nó quyết định mức độ đầy đủ ngữ cảnh và độ chính xác của kết quả truy xuất.|
+| 3 | How should a RAG system respond when retrieval is insufficient ? | `rag_system_design.md` nói rằng nếu kết quả retrieval yếu hoặc mâu thuẫn thì hệ thống nên nói rõ điều đó thay vì giả vờ câu trả lời là đầy đủ. | 0.3519 | Có | Hệ thống nên thừa nhận thiếu ngữ cảnh hoặc đề xuất escalation, không nên tự bịa ra câu trả lời.|
+| 4 | Why is metadata filtering useful in support systems ? | `vector_store_notes.md` mô tả metadata filtering giúp giảm noise và tránh trả về tài liệu sai nhóm người dùng; nội dung này cũng phù hợp với `customer_support_playbook.txt` | 0.4745 | Có | Metadata filtering giúp giới hạn phạm vi tìm kiếm đúng nguồn tài liệu, tránh lộ quy trình nội bộ hoặc trả lời sai đối tượng.|
+| 5 | How is Python used in AI and RAG applications ? | `python_intro.txt` mô tả Python được dùng để xử lý dữ liệu, huấn luyện mô hình, chạy evaluation scripts, và kết nối embedding models với vector stores trong hệ thống RAG. | 0.6674 | Có | Python là ngôn ngữ phổ biến để xây dựng pipeline AI và tích hợp các thành phần như embeddings, vector store và application logic.|
 
-**Bao nhiêu queries trả về chunk relevant trong top-3?** __ / 5
+**Bao nhiêu queries trả về chunk relevant trong top-3?** 5 / 5
 
 ---
 
