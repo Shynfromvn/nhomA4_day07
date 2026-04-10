@@ -98,7 +98,7 @@ Giải thích cách tiếp cận của bạn khi implement các phần chính tr
 ### KnowledgeBaseAgent
 
 **`answer`** — approach:
-> *Viết 2-3 câu: prompt structure? Cách inject context?*
+> *Viết 2-3 câu: prompt structure? Cách inject context? viết chi tiết answer*
 
 ### Test Results
 
